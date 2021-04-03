@@ -69,7 +69,7 @@ namespace Security_code
                 }
                 catch (Exception e)
                 {
-                    //Console.WriteLine("Exception: " + e.Message);
+                    Console.WriteLine("Exception: " + e.Message);
                 }
                 finally
                 {
@@ -108,7 +108,7 @@ namespace Security_code
         {
             save_to_file();
         }
-
+        //Button Event
         private void btn1_MouseClick(object sender, MouseEventArgs e)
         {
             if (tbx0.TextLength < 4)
@@ -116,43 +116,21 @@ namespace Security_code
                 tbx0.Text += ((Button)sender).Text;
             }
         }
-
         private void btn_clear_Click(object sender, EventArgs e)
         {
-            //tbx0.Text = "";
-            // www.it-swarm-vi.com/vi/c%23/cat-ky-tu-cuoi-cung-tu-mot-chuoi/969273032/
             if (tbx0.Text != "")
             {
                 tbx0.Text = (tbx0.Text).Remove(tbx0.TextLength - 1);
             }    
         }
-
         private void btn_enter_Click(object sender, EventArgs e)
         {
             showlog(tbx0.Text);
             tbx0.Text = "";
         }
-
+        //Textbox Event
         private void tbx0_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // stackoverflow.com/questions/463299/how-do-i-make-a-textbox-that-only-accepts-numbers 
-            /*
-             * if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-            else if (e.KeyChar == 13)
-            {
-                showlog(tbx0.Text);
-                tbx0.Text = "";
-            }
-            // only allow one decimal point
-            //if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            //{
-            //    e.Handled = true;
-            //}
-             */
-            // stackoverflow.com/questions/1191698/how-can-i-accept-the-backspace-key-in-the-keypress-event
             if (!(char.IsDigit(e.KeyChar)) && !(char.IsControl(e.KeyChar)) && !(char.IsWhiteSpace(e.KeyChar)))
             {
                 e.Handled = true;
@@ -162,15 +140,6 @@ namespace Security_code
                 showlog(tbx0.Text);
                 tbx0.Text = "";
             }
-        }
-
-        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            
-        }
-
-        private void button11_KeyDown(object sender, KeyEventArgs e)
-        {
         }
         private void tbx0_KeyDown(object sender, KeyEventArgs e)
         {

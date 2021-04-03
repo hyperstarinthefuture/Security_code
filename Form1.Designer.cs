@@ -79,7 +79,6 @@ namespace Security_code
             this.btn1.TabIndex = 2;
             this.btn1.Text = "1";
             this.btn1.UseVisualStyleBackColor = true;
-            this.btn1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button11_KeyDown);
             this.btn1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn1_MouseClick);
             // 
             // button1
@@ -91,7 +90,6 @@ namespace Security_code
             this.button1.TabIndex = 0;
             this.button1.Text = "2";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button11_KeyDown);
             this.button1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn1_MouseClick);
             // 
             // button2
@@ -103,7 +101,6 @@ namespace Security_code
             this.button2.TabIndex = 0;
             this.button2.Text = "3";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button11_KeyDown);
             this.button2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn1_MouseClick);
             // 
             // button3
@@ -115,7 +112,6 @@ namespace Security_code
             this.button3.TabIndex = 0;
             this.button3.Text = "4";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button11_KeyDown);
             this.button3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn1_MouseClick);
             // 
             // button4
@@ -127,7 +123,6 @@ namespace Security_code
             this.button4.TabIndex = 0;
             this.button4.Text = "5";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button11_KeyDown);
             this.button4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn1_MouseClick);
             // 
             // button5
@@ -139,7 +134,6 @@ namespace Security_code
             this.button5.TabIndex = 0;
             this.button5.Text = "6";
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button11_KeyDown);
             this.button5.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn1_MouseClick);
             // 
             // button6
@@ -151,7 +145,6 @@ namespace Security_code
             this.button6.TabIndex = 0;
             this.button6.Text = "7";
             this.button6.UseVisualStyleBackColor = true;
-            this.button6.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button11_KeyDown);
             this.button6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn1_MouseClick);
             // 
             // button7
@@ -163,7 +156,6 @@ namespace Security_code
             this.button7.TabIndex = 0;
             this.button7.Text = "8";
             this.button7.UseVisualStyleBackColor = true;
-            this.button7.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button11_KeyDown);
             this.button7.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn1_MouseClick);
             // 
             // button8
@@ -175,7 +167,6 @@ namespace Security_code
             this.button8.TabIndex = 0;
             this.button8.Text = "9";
             this.button8.UseVisualStyleBackColor = true;
-            this.button8.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button11_KeyDown);
             this.button8.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn1_MouseClick);
             // 
             // btn_clear
@@ -189,7 +180,6 @@ namespace Security_code
             this.btn_clear.Text = "C";
             this.btn_clear.UseVisualStyleBackColor = false;
             this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
-            this.btn_clear.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button11_KeyDown);
             // 
             // btn_enter
             // 
@@ -202,7 +192,6 @@ namespace Security_code
             this.btn_enter.Text = "E";
             this.btn_enter.UseVisualStyleBackColor = false;
             this.btn_enter.Click += new System.EventHandler(this.btn_enter_Click);
-            this.btn_enter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button11_KeyDown);
             // 
             // button11
             // 
@@ -213,7 +202,6 @@ namespace Security_code
             this.button11.TabIndex = 0;
             this.button11.Text = "0";
             this.button11.UseVisualStyleBackColor = true;
-            this.button11.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button11_KeyDown);
             this.button11.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn1_MouseClick);
             // 
             // lb1
@@ -261,7 +249,6 @@ namespace Security_code
             this.Name = "Form1";
             this.Text = "Security Code";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
 
