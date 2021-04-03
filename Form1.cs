@@ -91,6 +91,7 @@ namespace Security_code
             else if (password.Length == 0)
             {
                 MessageBox.Show("Please input password before enter!");
+                return;
             }    
             else if (password == passs)
             {
