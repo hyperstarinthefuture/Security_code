@@ -16,10 +16,12 @@ namespace Security_code
         {
             InitializeComponent();
             load_file();
+            this.ActiveControl = tbx0;
+            //tbx0.Focus();
         }
         //Declaration
         private string passs = "1234";
-        private string path_dir = @"..\MSSV.txt";
+        private string path_dir = @"..\102190143.txt";
         private int num_access_log = 0;
         //Initialize Function
         public void load_file()
@@ -32,7 +34,7 @@ namespace Security_code
                     string s = "";
                     while ((s = sr.ReadLine()) != null)
                     {
-                        listView1.Items.Add(s);
+                        listBox1.Items.Add(s);
                     }
                 }
             }
@@ -44,9 +46,9 @@ namespace Security_code
             {
                 using (StreamWriter sw = File.AppendText(path_dir))
                 {
-                    for (int i = listView1.Items.Count - num_access_log; i < listView1.Items.Count; i++)
+                    for (int i = listBox1.Items.Count - num_access_log; i < listBox1.Items.Count; i++)
                     {
-                        sw.WriteLine(listView1.Items[i].Text);
+                        sw.WriteLine(listBox1.Items[i].ToString());
                     }
                     //Close the file
                     sw.Close();
@@ -58,9 +60,9 @@ namespace Security_code
                 {
                     //Pass the filepath and filename to the StreamWriter Constructor
                     StreamWriter sw = new StreamWriter(path_dir);
-                    foreach (ListViewItem item in listView1.Items)
+                    foreach (var item in listBox1.Items)
                     {
-                        sw.WriteLine(item.Text);
+                        sw.WriteLine(item.ToString());
                     }
                     //Close the file
                     sw.Close();
@@ -81,15 +83,25 @@ namespace Security_code
         {
             DateTime dt = DateTime.Now;
             string login_result = "";
-            if (password == passs)
+            if (password.Length == 1)
+            {
+                MessageBox.Show("Restricted Access!");
+                login_result += dt.ToString() + " - Restricted Access";
+            }  
+            else if (password.Length == 0)
+            {
+                MessageBox.Show("Please input password before enter!");
+            }    
+            else if (password == passs)
             {
                 login_result += dt.ToString() + " - Granted";
             }
             else
             {
-                login_result += dt.ToString() + " - Restricted Access";
+                login_result += dt.ToString() + " - Access Denied";
             }
-            this.listView1.Items.Add(login_result);
+            this.listBox1.Items.Add(login_result);
+            num_access_log += 1;
         }
         //Form Event
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
@@ -119,7 +131,6 @@ namespace Security_code
         {
             showlog(tbx0.Text);
             tbx0.Text = "";
-            num_access_log += 1;
         }
 
         private void tbx0_KeyPress(object sender, KeyPressEventArgs e)
@@ -142,7 +153,7 @@ namespace Security_code
             //}
              */
             // stackoverflow.com/questions/1191698/how-can-i-accept-the-backspace-key-in-the-keypress-event
-            if (!(char.IsLetter(e.KeyChar)) && !(char.IsNumber(e.KeyChar)) && !(char.IsControl(e.KeyChar)) && !(char.IsWhiteSpace(e.KeyChar)))
+            if (!(char.IsDigit(e.KeyChar)) && !(char.IsControl(e.KeyChar)) && !(char.IsWhiteSpace(e.KeyChar)))
             {
                 e.Handled = true;
             }
@@ -150,7 +161,28 @@ namespace Security_code
             {
                 showlog(tbx0.Text);
                 tbx0.Text = "";
-            }   
+            }
+        }
+
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void button11_KeyDown(object sender, KeyEventArgs e)
+        {
+        }
+        private void tbx0_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Control || e.KeyCode == Keys.Shift || e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9 || e.KeyCode < Keys.NumPad0 || e.KeyCode > Keys.NumPad9)
+            {
+                e.Handled = true;
+            }
+            else if (e.KeyCode == Keys.Enter)
+            {
+                showlog(tbx0.Text);
+                tbx0.Text = "";
+            }
         }
     }
 }
